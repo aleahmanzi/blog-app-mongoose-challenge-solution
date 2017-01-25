@@ -33,7 +33,7 @@ function generateBlogData() {
 	}
 }
 
-function tearDownDB90 {
+function tearDownDB() {
 	console.warn('Deleting database');
 	return mongoose.connection.dropDatabase();
 }
@@ -53,7 +53,7 @@ describe ('Blog API resource', function() {
 	});
 
 	after(function() {
-		returm closeServer;
+		return closeServer;
 	});
 
 })
@@ -188,4 +188,3 @@ describe('GET endpoint', function() {
         });
     });
   });
-});
