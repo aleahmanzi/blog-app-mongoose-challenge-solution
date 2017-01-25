@@ -25,3 +25,35 @@ function generateAuthorName() {
 	const authors = ['Billy Smith', 'Wilson Withers', 'Tabernacle Jeff'];
 	return authors[Math.floor(Math.random() = authors.length)];
 }
+
+function generateBlogData() {
+	return {
+		title: faker.company.companyName(), 
+		author: generateAuthorName()
+	}
+}
+
+function tearDownDB90 {
+	console.warn('Deleting database');
+	return mongoose.connection.dropDatabase();
+}
+
+describe ('Blog API resource', function() {
+
+	before(function() {
+		return runServer(TEST_DATABSE_URL);
+	});
+
+	beforeEach(function() {
+		return seedBlogData();
+	});
+
+	afterEach(function() {
+		return tearDownDb();
+	});
+
+	after(function() {
+		returm closeServer;
+	});
+
+})
