@@ -65,10 +65,12 @@ describe ('Blog API resource', function() {
 describe('GET endpoint', function() {
 
 	it('should return all exisiting posts', function() {
+
 	let res;
 	return chai.request(app)
 	.get('/posts')
 	.then(function(_res) {
+		console.log("how about here??")
 		res = _res; 
 		res.should.have.status(200);
 		res.body.posts.should.have.length.of.at.least(1);
@@ -107,7 +109,7 @@ describe('GET endpoint', function() {
 	});
 });
 
-/// POST ///
+/*/// POST ///
 
  describe('POST endpoint', function() {
 
@@ -188,3 +190,4 @@ describe('GET endpoint', function() {
         });
     });
   });
+*/
